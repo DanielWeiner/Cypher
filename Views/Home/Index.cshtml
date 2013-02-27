@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/Cypher.css" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/knockout-2.2.1.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Crypto-JS/rollups/sha256.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/Cypher.js")" type="text/javascript"></script>
+
+<div class="container">
+    <div class="row">
+        <div id="mainWrapper" class="span10 offset1">
+            <textarea data-bind="value: text, valueUpdate: 'afterkeydown'@*, hasfocus: isFocused, event: {keydown: handleKey, keyup: resetPressedKey }*@" id="mainText"></textarea>
+        </div>
+    </div>
+</div>
+<div id="yellowNote" class="note">
+    <div>
+        <span>Caesar Cypher</span> <input type="number" step="1" min="0" max="25" data-bind="value: caesarShift" />
+    </div>
+    <p data-bind="text: caesar"></p>
+</div>
+<div id="blueNote" class="note">
+    <div>
+        <span>SHA-256</span>
+    </div>
+    <p data-bind="text: sha256"></p>
+</div>
+<div id="keyboard">
+    <div id="keyboardWrapper">
+        <div id="back1"></div>
+        <div id="row0">
+            <span id="tilde">`</span><span id="num1">1</span><span id="num2">2</span><span id="num3">3</span><span id="num4">4</span><span id="num5">5</span><span id="num6">6</span><span id="num7">7</span><span id="num8">8</span><span id="num9">9</span><span id="num0">0</span><span id="dash">-</span><span id="equals">=</span>
+        </div>
+        <div id="row1">
+            <span id="q">Q</span><span id="w">W</span><span id="e">E</span><span id="r">R</span><span id="t">T</span><span id="y">Y</span><span id="u">U</span><span id="i">I</span><span id="o">O</span><span id="p">P</span><span id="leftBracket">[</span><span id="rightBracket">]</span><span id="backslash">\</span>
+        </div>
+        <div id="row2">
+            <span id="a">A</span><span id="s">S</span><span id="d">D</span><span id="f">F</span><span id="g">G</span><span id="h">H</span><span id="j">J</span><span id="k">K</span><span id="l">L</span><span id="semicolon">;</span><span id="quote">'</span>
+        </div>
+        <div id="row3">
+            <span id="z">Z</span><span id="x">X</span><span id="c">C</span><span id="v">V</span><span id="b">B</span><span id="n">N</span><span id="m">M</span><span id="comma">,</span><span id ="period">.</span><span id="slash">/</span>
+        </div>
+        <div id="back2"></div>
+    </div>
+</div>
